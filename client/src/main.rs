@@ -1,6 +1,6 @@
 use std::str::FromStr;
 
-use borsh::{BorshDeserialize, BorshSerialize};
+// use borsh::{BorshDeserialize, BorshSerialize};
 use solana_cli_config::Config;
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::{
@@ -8,21 +8,21 @@ use solana_sdk::{
     transaction::Transaction,
 };
 
-const INITIALIZE_DISCRIMINANT: [u8; 8] = [175, 175, 109, 31, 13, 152, 155, 237];
+// const INITIALIZE_DISCRIMINANT: [u8; 8] = [175, 175, 109, 31, 13, 152, 155, 237];
 
-#[derive(BorshSerialize, BorshDeserialize)]
-pub struct UserInfoParams {
-    pub name: String,
-    pub age: u8,
-}
+// #[derive(BorshSerialize, BorshDeserialize)]
+// pub struct UserInfoParams {
+//     pub name: String,
+//     pub age: u8,
+// }
 
 const PROGRAM_ID: &str = "ARbowygvyWvish2HNEwsGexXtFHy1ujMAk36sjdSBRrN";
 
 fn main() {
-    let user = UserInfoParams {
-        name: "Alice".to_string(),
-        age: 30,
-    };
+    // let user = UserInfoParams {
+    //     name: "Alice".to_string(),
+    //     age: 30,
+    // };
 
     let config_file = solana_cli_config::CONFIG_FILE
         .as_ref()
@@ -47,9 +47,20 @@ fn main() {
 
     let (pda_account, _) = Pubkey::find_program_address(seeds, &program_id);
 
-    let ix = solana_sdk::instruction::Instruction::new_with_borsh(
+    // let ix = solana_sdk::instruction::Instruction::new_with_borsh(
+    //     program_id,
+    //     &(INITIALIZE_DISCRIMINANT, user),
+    //     vec![
+    //         AccountMeta::new(pda_account, false),
+    //         AccountMeta::new_readonly(signer_pubkey, true),
+    //         AccountMeta::new_readonly(system_program::ID, false),
+    //     ],
+    // );
+
+    let data: [u8; 8] = [175, 175, 109, 31, 13, 152, 155, 237];
+    let ix = solana_sdk::instruction::Instruction::new_with_bytes(
         program_id,
-        &(INITIALIZE_DISCRIMINANT, user),
+        &data,
         vec![
             AccountMeta::new(pda_account, false),
             AccountMeta::new_readonly(signer_pubkey, true),
