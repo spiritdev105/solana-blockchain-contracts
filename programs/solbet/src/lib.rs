@@ -6,11 +6,34 @@ declare_id!("ARbowygvyWvish2HNEwsGexXtFHy1ujMAk36sjdSBRrN");
 pub mod solbet {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+    pub fn initialize(ctx: Context<Initialize>, data: UserInfo) -> Result<()> {
         msg!("Greetings from: {:?}", ctx.program_id);
+        let user_data = &mut ctx.accounts.data;
+        user_data.name = data.name;
+        user_data.age = data.age;
         Ok(())
     }
 }
 
+#[account]
+pub struct UserInfo {
+    pub name: String,
+    pub age: u8,
+}
+const PDA_SEED: &[u8] = b"hello";
+
 #[derive(Accounts)]
-pub struct Initialize {}
+#[instruction(instruction_data: UserInfo)]
+pub struct Initialize<'info> {
+    #[account(
+        init,
+        seeds = [PDA_SEED, authority.key().as_ref()],
+        bump,
+        payer = authority,
+        space =  8 + 4 + instruction_data.name.len() + 1,
+    )]
+    pub data: Account<'info, UserInfo>,
+    #[account(mut)]
+    pub authority: Signer<'info>,
+    pub system_program: Program<'info, System>,
+}
