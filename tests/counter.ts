@@ -2,11 +2,11 @@ import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { Counter } from "../target/types/counter";
 
-describe("solbet", () => {
+describe("counter", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
-  const program = anchor.workspace.Solbet as Program<Counter>;
+  const program = anchor.workspace.Counter as Program<Counter>;
 
   it("Is initialized!", async () => {
     // Add your test here.

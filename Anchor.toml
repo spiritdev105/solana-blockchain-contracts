@@ -6,6 +6,7 @@ skip-lint = false
 
 [programs.localnet]
 solbet = "ARbowygvyWvish2HNEwsGexXtFHy1ujMAk36sjdSBRrN"
+counter = "AcfG5w5GjU95Ho6imbra9xBW5gvM5ujNdKN7PjNvtkfe"
 
 [registry]
 url = "https://api.apr.dev"
