@@ -1,5 +1,5 @@
 [workspace]
-members = ["client", "programs/*"]
+members = ["client", "counter_client", "programs/*"]
 resolver = "2"
 
 [profile.release]
