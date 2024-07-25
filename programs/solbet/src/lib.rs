@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("ARbowygvyWvish2HNEwsGexXtFHy1ujMAk36sjdSBRrN");
+declare_id!("9R8wv2sgJN6GjDtpp73K5zEMT85jZAvd9C3G1ykvkqG9");
 
 #[program]
 pub mod solbet {

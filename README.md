@@ -62,3 +62,15 @@ Show account info
 ```bash
 solana account account-id
 ```
+
+Anchor test
+
+```bash
+anchor test --skip-local-validator
+```
+
+Anchor key list
+
+```bash
+anchor keys list
+```

@@ -10,6 +10,11 @@ pub mod counter {
         msg!("Greetings from: {:?}", ctx.program_id);
         Ok(())
     }
+
+    // pub fn fnitialize(ctx: Context<Initialize>) -> Result<()> {
+    //     msg!("fnitialize from: {:?}", ctx.program_id);
+    //     Ok(())
+    // }
 }
 
 #[derive(Accounts)]
