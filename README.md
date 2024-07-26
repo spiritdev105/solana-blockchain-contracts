@@ -1,6 +1,22 @@
 # dApp on Solana
 
-pubkey: CHDriqdpVGcYGR9hKbxGtBUiUh7umMEa4gViotcYgsnN
+Generate key-pair string
+
+```bash
+cargo run -p keygen
+```
+
+Build the contract
+
+```bash
+anchor build
+```
+
+Deploy the contract
+```bash
+anchor deploy
+```
+Note: If the deployment fails, topup the size using ``solana program extend``
 
 Run validator
 
@@ -75,8 +91,8 @@ Anchor key list
 anchor keys list
 ```
 
-More bytes to the contract
+More bytes to the contract using ``solana program extend``
 
 ```bash
-solana program extend FcVz5svHC4h2JZFuGNnwCk5gfWz8bnEjoMhYUaTqm9d3 30000 --url "http://localhost:8899" -k ~/.config/solana/id.json
+solana program extend AcfG5w5GjU95Ho6imbra9xBW5gvM5ujNdKN7PjNvtkfe 30000 --url "http://localhost:8899" -k ~/.config/solana/id.json
 ```

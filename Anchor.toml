@@ -6,8 +6,6 @@ skip-lint = false
 
 [programs.localnet]
 counter = "AcfG5w5GjU95Ho6imbra9xBW5gvM5ujNdKN7PjNvtkfe"
-counter2 = "BkvmTGwkYLA7ZJwkhr6UNrjPQ1G3odAPgjX7x3oCYTaD"
-solbet = "9R8wv2sgJN6GjDtpp73K5zEMT85jZAvd9C3G1ykvkqG9"
 
 [registry]
 url = "https://api.apr.dev"
