@@ -24,6 +24,19 @@ Generate key-pair string
 ```bash
 cargo run -p keygen
 ```
+paste it in the CLIENT_KEY_STR in apps/initialize and apps/increment
+
+Initialize counter
+
+```bash
+cargo run -p initialize
+```
+
+Initialize counter
+
+```bash
+cargo run -p increment
+```
 
 
 Get config
