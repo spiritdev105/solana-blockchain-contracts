@@ -13,7 +13,6 @@ use counter;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("program-id: {}", counter::ID);
     let payer = read_keypair_file(&*shellexpand::tilde("~/.config/solana/id.json"))
-    // let payer = read_keypair_file(&*shellexpand::tilde("~/git/tom/try_sol/target/deploy/counter-keypair.json"))
         .expect("Example requires a keypair file");
     let client = Client::new(Cluster::Localnet, Rc::new(payer));
 
@@ -24,7 +23,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let account_kp = Keypair::new();
 
     let kp = Keypair::new();
-
 
     // Build and send a transaction.
     let tx = program

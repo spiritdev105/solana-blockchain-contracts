@@ -74,3 +74,9 @@ Anchor key list
 ```bash
 anchor keys list
 ```
+
+More bytes to the contract
+
+```bash
+solana program extend FcVz5svHC4h2JZFuGNnwCk5gfWz8bnEjoMhYUaTqm9d3 30000 --url "http://localhost:8899" -k ~/.config/solana/id.json
+```
