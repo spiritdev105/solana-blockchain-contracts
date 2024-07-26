@@ -1,9 +1,9 @@
 # dApp on Solana
 
-Generate key-pair string
+Run validator
 
 ```bash
-cargo run -p keygen
+solana-test-validator
 ```
 
 Build the contract
@@ -18,11 +18,13 @@ anchor deploy
 ```
 Note: If the deployment fails, topup the size using ``solana program extend``
 
-Run validator
+
+Generate key-pair string
 
 ```bash
-solana-test-validator
+cargo run -p keygen
 ```
+
 
 Get config
 
